@@ -1,0 +1,204 @@
+*{
+    margin:0;
+    padding: 0;
+}
+ul,li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+img{
+    border: 0;
+}
+/*通用样式*/
+#header{
+    width: 100%;
+    height: 88px;
+    position: fixed;
+    z-index: 1;
+}
+.wrapper{
+    width: 960px;
+    margin:  0 auto;
+}
+.wrapper-s{
+    width: 960px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+#top-nav{
+    overflow: hidden;
+    background: #f4f4f4;
+    border-bottom: 1px solid #dbdbdb;
+}
+#search-box{
+    color: #dbdbdb;
+    font-size: 15px;
+    float: left;
+
+    border-right: 1px solid #dbdbdb;
+
+}
+
+.topnav-search{
+    line-height: 30px;
+    margin-right: 5px;
+
+}
+#sign-box{
+    float: right;
+    color: #dbdbdb;
+
+}
+#sign-box li{
+    display: inline-block;
+    margin-right: 0;
+}
+#sign-box .floowus a,#sign-box .topnav-ico a{
+    color: #dbdbdb;
+}
+#sign-box .floowus a:hover{
+    color: #040404;
+}
+#sign-box .topnav-ico a:hover{
+    color: #f00;
+
+}
+#sign-box .topnav-sign a{
+    display: block;
+    background: #424242;
+    padding: 5px 10px;
+    border: 1px ;
+    color:#fff;
+}
+#sign-box .topnav-signin a{
+    display: block;
+    background: #e5421d;
+    padding: 5px 10px;
+    color:#fff;
+}
+#sign-box .topnav-sign a:hover,#sign-box .topnav-signin a:hover{
+    background: #f4f4f4;
+    color: #424242;
+
+
+
+}
+#sign-box .topnav-sign a:hover .glyphicon,#sign-box .topnav-signin a:hover .glyphicon{
+    color: #e5421d;
+}
+
+#nav{
+    height: 56px;
+    line-height: 56px;
+    background: #fff;
+    z-index: 1;
+
+}
+#nav .logo{
+    float: left;
+    color: #e5421d;
+    font-size: 36px;
+    line-height: 56px;
+    font-style: italic;
+}
+#nav .ul1{
+    float: right;
+    font-size: 14px;
+    color: #040404;
+    font-weight: bold;
+}
+#nav .ul1 > li{
+    display: inline-block;
+    position: relative;
+    margin-right: 8px;
+}
+#nav .ul2{
+    position: absolute;
+    top: 40px;
+    width: 150px;
+
+    display: none;
+    line-height: 30px;
+
+    background: #fff;
+
+}
+#nav .ul2 a{
+    color: #dbdbdb;
+}
+#nav .ul1 .shop-menu-s:hover >.ul2{
+    display: block;
+
+}
+#nav .ul1 .shop-menu-boke:hover > .ul2{
+    display: block;
+}
+#nav .selected a{
+    color: #e5421d;
+}
+
+#nav .ul2 li:hover{
+    background: #040404;
+}
+#footer{
+    background: #1f2123;
+    overflow: hidden;
+    padding: 20px;
+
+}
+#footer .footer-box{
+    float: left;
+    text-align: center;
+    margin-left: 15px;
+}
+#footer .footer-box p{
+    background: #191a1c;
+    color: #fff;
+    padding: 15px;
+    width: 280px;
+    font-size: 13px;
+}
+#footer .footer-box h3{
+    color: #fff;
+}
+#footer .footer-box .box-blog{
+    height: 30px;
+    background: #191a1c;
+    border: 1px solid #1f2123;
+    color: #e5421d;
+    font-weight: bold;
+}
+#footer .footer-box .contactbox-s {
+    margin-bottom: 15px;
+}
+#footer .footer-box .contactbox-s li{
+    text-align: left;
+    margin-bottom: 10px;
+    color: #fff;
+}
+#footer .footer-box .contactbox-o li{
+    text-align: center;
+    display: inline-block;
+    margin-top: 15px;
+}
+#footer .footer-box .contactbox-o li a{
+    font-size: 24px;
+    color: #797979;
+}
+#footer .footer-box .contactbox-o li.selected a{
+    color: #e5421d;
+}
+.footer-right{
+    float: right;
+}
+#footer .wrapper{
+    overflow: hidden;
+}
+.divider{
+    font-size: 24px;
+    color: #7c7c7c;
+    margin: 10px auto;
+}
+
