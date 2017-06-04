@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+          margin: 0;
+            padding: 0;
+        }
+        #div1{
+            width: 1000px;
+            height: 300px;
+            background: #cccccc;
+            margin: 100px auto;
+            box-shadow: 0px 0px 2px 4px rgba(0,0,0,0.6);
+            border:1px solid  rgba(0,0,0,0.6);
+            position: relative;
+            -webkit-perspective: 800px;
+            -webkit-perspective-origin:  center -20%;
+        }
+
+    #div2{
+        width: 128px;
+        height: 100px;
+        margin: 80px auto;
+        position: relative;
+        -webkit-transform-style:preserve-3d;
+        -webkit-transition:transform 2s ease ;
+    }
+        #div2 img{
+            width: 128px;
+            height: 100px;
+            position: absolute;
+            left:0;
+            top:0;
+            -webkit-transition:transform 1s ease ;
+        }
+
+        }
+    </style>
+</head>
+<body>
+<div id="div1">
+    <div id="div2">
+
+    </div>
+</div>
+<script>
+    var oDiv2=document.getElementById('div2');
+    var x = 64/Math.tan(20*Math.PI/180)+20;
+    var count = 0;
+    for(var i=0;i<9;i++) {
+
+        var oImg = new Image();
+
+        oImg.onload = function () {
+            count++;
+            var time = 900;
+            if (count == 9) {
+                time= time -100;
+                var aImg = oDiv2.getElementsByTagName('img');
+                for (var i = 0; i < 9; i++) {
+
+                    aImg[i].style.webkitTransition = 'transform 2s ease '+time+'ms';
+                    aImg[i].style.WebkitTransform = 'rotateY('+(-i*40)+'deg) translateZ('+x+'px)';
+
+
+                }
+            }
+
+        }
+        oImg.src = 'img/'+(i + 1) + '.jpg';
+        oDiv2.appendChild(oImg);
+    }
+    var num=1;
+    oDiv2.onclick= function(){
+        num++
+        this.style.webkitTransform='rotateY('+num*40+'deg)'
+    }
+//    var aImg = document.getElementsByTagName('img');
+//    for(var i=aImg.length-1; i>=0;i--){
+//        aImg[i].style.webkitTransform = 'rotateY("+(-i*40)+"deg) translateZ("+x+"px)';
+//    }
+
+
+
+</script>
+
+</body>
+</html>
