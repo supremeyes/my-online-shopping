@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="js/jquery.mobile-1.4.5.min.css">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul, ol{
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+        }
+        img{
+            border: 0;
+        }
+        body{
+            background: #000000;
+        }
+        #app{
+            width: 320px;
+            margin: 0 auto;
+        }
+        #app #content{
+            width: 320px;
+        }
+        #app img{
+            float: left;
+            width: 25%;
+            border: 2px solid #000000 ;
+            box-sizing: border-box;
+            display: block;
+
+        }
+        #bigImg{
+            width: 320px;
+            height: 480px;
+            display: none;
+            background: #000000;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center center;
+
+
+        }
+        #bigImg img{
+            width: 320px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <ul id="content">
+
+
+        </ul>
+        <div id="bigImg">
+
+        </div>
+
+    </div>
+        <script src="js/jquery.min.js"></script>
+        <script src="js/jquery.mobile-1.4.5.min.js"></script>
+        <script>
+            for(var i=1;i<25;i++){
+                $('#content').append('<img src="img/thumbs/'+i+'.jpg" alt="" class="con">');
+
+            }
+            var $content = $('#content');
+            var $bigImg = $('#bigImg');
+            var iNow = 0;
+            $('#content img').on('tap',function(e){
+                $content.hide();
+                $bigImg.show().css('background-image','url(img/'+($(this).index()+1)+'.jpg');
+                iNow = $(this).index();
+                e.preventDefault();
+
+
+            });
+            $bigImg.on('tap',function(e){
+                $bigImg.hide();
+                $content.show();
+                e.preventDefault();
+
+            }).on('swiperight',function(){
+                iNow++;
+                if(iNow ==$('#content img').length){
+                    iNow =0;
+                };
+                $bigImg.show().css('background-image','url(img/'+(iNow+1)+'.jpg');
+            }).on('swipeleft',function(){
+                iNow--;
+                if(iNow==-1){
+                    iNow=$('#content img').length;
+
+                }
+                $bigImg.show().css('background-image','url(img/'+(iNow+1)+'.jpg');
+
+            });
+
+
+        </script>
+
+</body>
+</html>
