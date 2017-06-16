@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+
+    </style>
+</head>
+<body>
+<div id="app">
+    <label for="username">用户：</label>
+    <input type="text" id="username" require min="6" pattern="\w+" />
+    <br>
+    <label for="youxiang">邮箱：</label>
+    <input type="text" id="email" require />
+    <br>
+    <label for="gerenziliao">个人资料：</label>
+    <input type="text" id="person">
+    <br>
+
+    <input type="button" value="提交">
+    <input type="button" value="重置">
+
+</div>
+<script src="jquery.min.js"></script>
+<script>
+    $iptRequire = $(':input').filter('[require]');
+    $iptRequire.each(function(){
+        $(this).after('<strong style="color:red;">*</strong>' ).on('focus',function(){
+            $('.erroy').remove();
+            $(this).next().after('<span style="background: pink;padding: 0 8px;" class="erroy">请输入大于六位的值</span>')
+        }).on('keyup',function(){
+            if(this.value.length>=6){
+                $('.yes').remove();
+                $('.erroy').remove();
+                $(this).next().after('<span style="background: greenyellow;padding: 0 8px;" class="yes">输入正确</span>')
+
+            }else{
+                $('.yes').remove();
+                $('.erroy').remove();
+                $(this).next().after('<span style="background: pink;padding: 0 8px;" class="erroy">请输入大于六位的值</span>')
+
+            }
+        })
+    })
+</script>
+</body>
+</html>
